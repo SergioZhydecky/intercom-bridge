@@ -9,4 +9,14 @@ export class IntercomBridgeWeb
     console.log('ECHO', options);
     return options;
   }
+
+  async registerUserWithUserId(options: { userId: string }): Promise<{ value: string }> {
+    console.error(`registerUserWithUserId cant reg ${options.userId} wrong platform`);
+    return {value: 'wrong platform'}
+  }
+
+  async presentMessenger(): Promise<{ value: string }> {
+    console.error('presentMessenger wrong platform');
+    return {value: 'wrong platform'}
+  }
 }
