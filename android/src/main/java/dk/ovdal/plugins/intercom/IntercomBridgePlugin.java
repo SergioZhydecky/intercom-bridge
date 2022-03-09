@@ -7,6 +7,7 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
 import io.intercom.android.sdk.Intercom;
+import io.intercom.android.sdk.UserAttributes;
 import io.intercom.android.sdk.identity.Registration;
 
 @CapacitorPlugin(name = "IntercomBridge")
@@ -31,6 +32,37 @@ public class IntercomBridgePlugin extends Plugin {
 
         JSObject ret = new JSObject();
         ret.put("value", implementation.echo("successfully registered "));
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void registerUndefinedUser(PluginCall call) {
+        Intercom.client().registerUnidentifiedUser();
+
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.echo("successfully registered undefined user"));
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void logout(PluginCall call) {
+        Intercom.client().logout();
+
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.echo("successfully logged out "));
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void updateUser(PluginCall call) {
+        String name = call.getString("name");
+        UserAttributes userAttributes = new UserAttributes.Builder()
+                .withName(name)
+                .build();
+        Intercom.client().updateUser(userAttributes);
+
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.echo("user successfully updated "));
         call.resolve(ret);
     }
 

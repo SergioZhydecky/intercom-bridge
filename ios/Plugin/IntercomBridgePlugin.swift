@@ -21,9 +21,39 @@ public class IntercomBridgePlugin: CAPPlugin {
         let userId = call.getString("userId") ?? ""
         
         Intercom.registerUser(withUserId: userId)
-        
+
         call.resolve([
-            "value": "<#success#>"
+            "value": "<#success#> registerUserWithUserId"
+        ])
+    }
+
+    @objc func registerUndefinedUser(_ call: CAPPluginCall) {
+
+        Intercom.registerUnidentifiedUser()
+
+        call.resolve([
+            "value": "<#success#> registerUndefinedUser"
+        ])
+    }
+    
+    @objc func logout(_ call: CAPPluginCall) {
+
+        Intercom.logout()
+
+        call.resolve([
+            "value": "<#success#> logout"
+        ])
+    }
+    
+    @objc func updateUser(_ call: CAPPluginCall) {
+        let name = call.getString("name") ?? ""
+        
+        let userAttributes = ICMUserAttributes()
+        userAttributes.name = name
+        Intercom.updateUser(userAttributes)
+
+        call.resolve([
+            "value": "<#success#> updateUser"
         ])
     }
     
@@ -31,7 +61,7 @@ public class IntercomBridgePlugin: CAPPlugin {
         Intercom.presentMessenger()
         
         call.resolve([
-            "value": "<#success#>"
+            "value": "<#success#> presentMessenger"
         ])
     }
 }

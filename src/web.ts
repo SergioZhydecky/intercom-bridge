@@ -15,6 +15,20 @@ export class IntercomBridgeWeb
     return {value: 'wrong platform'}
   }
 
+  async registerUndefinedUser(): Promise<{ value: string }> {
+    console.error(`registerUndefinedUser cant reg wrong platform`);
+    return {value: 'wrong platform'}
+  }
+  async logout(): Promise<{ value: string }> {
+    console.error(`cant logout wrong platform`);
+    return {value: 'wrong platform'}
+  }
+
+  async updateUser(options: { name: string }): Promise<{ value: string }> {
+    console.error(`cant update user name ${options.name} wrong platform`);
+    return {value: 'wrong platform'}
+  }
+
   async presentMessenger(): Promise<{ value: string }> {
     console.error('presentMessenger wrong platform');
     return {value: 'wrong platform'}
