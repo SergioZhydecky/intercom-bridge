@@ -38,6 +38,42 @@
         "slug": "registeruserwithuserid"
       },
       {
+        "name": "registerUndefinedUser",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "registerundefineduser"
+      },
+      {
+        "name": "logout",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "logout"
+      },
+      {
+        "name": "updateUser",
+        "signature": "(options: { name: string; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ name: string; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "updateuser"
+      },
+      {
         "name": "presentMessenger",
         "signature": "() => any",
         "parameters": [],

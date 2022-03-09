@@ -15,6 +15,9 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`registerUserWithUserId(...)`](#registeruserwithuserid)
+* [`registerUndefinedUser()`](#registerundefineduser)
+* [`logout()`](#logout)
+* [`updateUser(...)`](#updateuser)
 * [`presentMessenger()`](#presentmessenger)
 
 </docgen-index>
@@ -46,6 +49,43 @@ registerUserWithUserId(options: { userId: string; }) => any
 | Param         | Type                             |
 | ------------- | -------------------------------- |
 | **`options`** | <code>{ userId: string; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### registerUndefinedUser()
+
+```typescript
+registerUndefinedUser() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### logout()
+
+```typescript
+logout() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### updateUser(...)
+
+```typescript
+updateUser(options: { name: string; }) => any
+```
+
+| Param         | Type                           |
+| ------------- | ------------------------------ |
+| **`options`** | <code>{ name: string; }</code> |
 
 **Returns:** <code>any</code>
 

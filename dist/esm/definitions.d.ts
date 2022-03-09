@@ -9,6 +9,17 @@ export interface IntercomBridgePlugin {
     }): Promise<{
         value: string;
     }>;
+    registerUndefinedUser(): Promise<{
+        value: string;
+    }>;
+    logout(): Promise<{
+        value: string;
+    }>;
+    updateUser(options: {
+        name: string;
+    }): Promise<{
+        value: string;
+    }>;
     presentMessenger(): Promise<{
         value: string;
     }>;
