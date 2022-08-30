@@ -80,12 +80,12 @@ logout() => any
 ### updateUser(...)
 
 ```typescript
-updateUser(options: { name: string; user_id: string; }) => any
+updateUser(options: { name: string; user_id?: string; }) => any
 ```
 
-| Param         | Type                                            |
-| ------------- | ----------------------------------------------- |
-| **`options`** | <code>{ name: string; user_id: string; }</code> |
+| Param         | Type                                             |
+| ------------- | ------------------------------------------------ |
+| **`options`** | <code>{ name: string; user_id?: string; }</code> |
 
 **Returns:** <code>any</code>
 
