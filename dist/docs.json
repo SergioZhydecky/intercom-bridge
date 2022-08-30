@@ -59,12 +59,12 @@
       },
       {
         "name": "updateUser",
-        "signature": "(options: { name: string; }) => any",
+        "signature": "(options: { name: string; user_id: string; }) => any",
         "parameters": [
           {
             "name": "options",
             "docs": "",
-            "type": "{ name: string; }"
+            "type": "{ name: string; user_id: string; }"
           }
         ],
         "returns": "any",

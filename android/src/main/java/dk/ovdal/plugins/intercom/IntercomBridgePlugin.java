@@ -56,9 +56,19 @@ public class IntercomBridgePlugin extends Plugin {
     @PluginMethod
     public void updateUser(PluginCall call) {
         String name = call.getString("name");
-        UserAttributes userAttributes = new UserAttributes.Builder()
+        String userId = call.getString("user_id");
+        UserAttributes userAttributes;
+        userAttributes = new UserAttributes.Builder()
                 .withName(name)
                 .build();
+
+        if (!userId.equals("")) {
+            userAttributes = new UserAttributes.Builder()
+                    .withName(name)
+                    .withUserId(userId)
+                    .build();
+        }
+
         Intercom.client().updateUser(userAttributes);
 
         JSObject ret = new JSObject();

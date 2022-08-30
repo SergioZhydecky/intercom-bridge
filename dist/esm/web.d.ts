@@ -19,6 +19,7 @@ export declare class IntercomBridgeWeb extends WebPlugin implements IntercomBrid
     }>;
     updateUser(options: {
         name: string;
+        user_id: string;
     }): Promise<{
         value: string;
     }>;

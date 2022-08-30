@@ -47,9 +47,14 @@ public class IntercomBridgePlugin: CAPPlugin {
     
     @objc func updateUser(_ call: CAPPluginCall) {
         let name = call.getString("name") ?? ""
+        let userId = call.getString("user_id") ?? ""
         
         let userAttributes = ICMUserAttributes()
         userAttributes.name = name
+        if (userId != "") {
+            userAttributes.userId = userId
+        }
+        
         Intercom.updateUser(userAttributes)
 
         call.resolve([

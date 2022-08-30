@@ -24,7 +24,7 @@ export class IntercomBridgeWeb
     return {value: 'wrong platform'}
   }
 
-  async updateUser(options: { name: string }): Promise<{ value: string }> {
+  async updateUser(options: { name: string, user_id: string }): Promise<{ value: string }> {
     console.error(`cant update user name ${options.name} wrong platform`);
     return {value: 'wrong platform'}
   }
